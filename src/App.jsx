@@ -254,6 +254,9 @@ function App() {
 
   const handleStorageCards = () => {
     let localbooks = localStorage.getItem("localBooks");
+    if(!localbooks){
+      return;
+    }
     console.log(JSON.parse(localbooks));
     const items = JSON.parse(localbooks).map((item, i) => {
       let thumbnail = "";
